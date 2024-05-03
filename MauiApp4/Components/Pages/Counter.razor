@@ -1,0 +1,31 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="flex justify-center bg-red-400" @onclick="Get">Click me</button>
+<p>@g</p>
+
+@code {
+    private int currentCount = 0;
+
+    string g = "";
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private async Task Get()
+    {
+        HttpClient client = new HttpClient();
+
+        var t = await client.GetAsync("https://jsonplaceholder.typicode.com/todos/2");
+        var res = await t.Content.ReadAsStringAsync();
+
+
+        g = res;
+
+
+    }
+}

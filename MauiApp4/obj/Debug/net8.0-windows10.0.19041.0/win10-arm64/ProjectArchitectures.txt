@@ -1,0 +1,1 @@
+C:\Users\jeanbaeez\source\repos\MauiApp4\MauiApp4\MauiApp4.csproj;arm64
